@@ -4,12 +4,43 @@
                 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.wyedward.dao.BlogTypeDao">
+    <!--返回结果映射 type使用别名 可以省略包名-->
+    <resultMap id="BlogTypeResult" type="BlogType">
+        <!--id主键字段映射-->
+        <id property="id" column="id"/>
+        <!--普通属性的映射-->
+        <result property="typeName" column="type_name"/>
+        <result property="orderNum" column="order_num"/>
+    </resultMap>
 
-
+    <!--id为具体实现接口的方法名-->
     <!--测试-->
     <select id="findAll" resultType="BlogType">
         select * FROM t_blogtype
     </select>
+
+    <!--插入博客类别 keyProperty是指定主键 useGeneratedKeys="true" 设置了这两个插入之后会返回主键的值-->
+    <insert id="addBlogType" parameterType="BlogType" keyProperty="id" useGeneratedKeys="true">
+
+        insert into db_blog.t_blogtype
+        <!--动态sql拼接 prefix前缀 suffix后缀 suffixOverrides除去最后多余的-->
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="typeName!=null and typeName!='' ">
+                type_name,
+            </if>
+            <if test="orderNum!=null and orderNum!='' ">
+                order_num,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="typeName!=null and typeName!='' ">
+                #{typeName},
+            </if>
+            <if test="orderNum!=null and orderNum!='' ">
+                #{orderNum},
+            </if>
+        </trim>
+    </insert>
 
 
 </mapper>

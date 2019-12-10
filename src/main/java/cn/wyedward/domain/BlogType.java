@@ -10,6 +10,13 @@ public class BlogType implements Serializable {
     private String typeName; //博客类别
     private Integer orderNum; //博客排序
 
+    public BlogType(){}
+
+    public BlogType(String typeName, Integer orderNum) {
+        this.typeName = typeName;
+        this.orderNum = orderNum;
+    }
+
     public Integer getId() {
         return id;
     }
