@@ -1,6 +1,6 @@
 package cn.wyedward.controller;
 
-import cn.wyedward.domain.Blogtype;
+import cn.wyedward.domain.BlogType;
 import cn.wyedward.service.impl.BlogTypeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,8 +21,8 @@ public class BlogTypeController {
      */
     @RequestMapping("/findAll")
     public String findAll(){
-        System.out.println("表现层：方法执");
-        List<Blogtype> list = blogtypeServiceImpl.findAll();
+        System.out.println("表现层：方法执行");
+        List<BlogType> list = blogtypeServiceImpl.findAll();
         System.out.println(list);
         return "success";
     }

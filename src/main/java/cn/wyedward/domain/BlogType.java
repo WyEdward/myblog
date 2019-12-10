@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 博客类别
  */
-public class Blogtype implements Serializable {
+public class BlogType implements Serializable {
     private Integer id; //博客id
     private String typeName; //博客类别
     private Integer orderNum; //博客排序
@@ -36,7 +36,7 @@ public class Blogtype implements Serializable {
 
     @Override
     public String toString() {
-        return "Blogtype{" +
+        return "BlogType{" +
                 "id=" + id +
                 ", typeName='" + typeName + '\'' +
                 ", orderNum=" + orderNum +
