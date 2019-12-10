@@ -1,16 +1,17 @@
 package cn.wyedward.service.impl;
 
 
-import cn.wyedward.dao.BlogtypeDao;
+import cn.wyedward.dao.BlogTypeDao;
 import cn.wyedward.domain.Blogtype;
-import cn.wyedward.service.BlogtypeService;
+import cn.wyedward.service.BlogTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-public class BlogtypeServiceImpl implements BlogtypeService {
+@Service
+public class BlogTypeServiceImpl implements BlogTypeService {
     @Autowired
-    private BlogtypeDao blogtypeDao;
+    private BlogTypeDao blogtypeDao;
     @Override
     public List<Blogtype> findAll() {
         System.out.println("业务层次：执行了查询方法");

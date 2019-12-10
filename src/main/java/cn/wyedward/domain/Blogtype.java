@@ -6,15 +6,15 @@ import java.io.Serializable;
  * 博客类别
  */
 public class Blogtype implements Serializable {
-    private int id; //博客id
+    private Integer id; //博客id
     private String typeName; //博客类别
-    private int orderNum; //博客排序
+    private Integer orderNum; //博客排序
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -26,11 +26,11 @@ public class Blogtype implements Serializable {
         this.typeName = typeName;
     }
 
-    public int getOrderNum() {
+    public Integer getOrderNum() {
         return orderNum;
     }
 
-    public void setOrderNum(int orderNum) {
+    public void setOrderNum(Integer orderNum) {
         this.orderNum = orderNum;
     }
 

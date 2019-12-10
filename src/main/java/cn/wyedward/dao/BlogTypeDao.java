@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BlogtypeDao {
+public interface BlogTypeDao {
     /**
      * 找到所有博客类别
      * @return
