@@ -11,6 +11,16 @@
 </head>
 <body class="easyui-layout">
     <div region="north" style="height: 78px; background-color: #E0ECFF">
+        <table style="padding: 5px" width="100%">
+            <tr>
+                <td width="50%">
+                    <h2>博客后台系统</h2>
+                </td>
+                <td valign="bottom" align="right" width="50%">
+                    <font size="3">  <strong>欢迎：</strong>admin</font>
+                </td>
+            </tr>
+        </table>
     </div>
     <div region="west" style="width: 200px" title="导航菜单" split="true">
         <div class="easyui-accordion" data-options="fit:true,border:false">
@@ -53,19 +63,16 @@
         </div>
     </div>
     <div data-options="region:'center'" style="background:#eee;">
-        <div id="tt" class="easyui-tabs" style="width:500px;height:250px;">
-            <div title="Tab1" style="padding:20px;display:none;">
-                tab1
-            </div>
-            <div title="Tab2" data-options="closable:true" style="overflow:auto;padding:20px;display:none;">
-                tab2
-            </div>
-            <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;display:none;">
-                tab3
+        <div class="easyui-tabs" fit="true" border="false" id="tabs">
+            <div title="首页" data-options="iconCls:'icon-home'">
+                <div align="center" style="padding-top: 100px"><font color="red" size="10">欢迎使用</font></div>
             </div>
         </div>
     </div>
     <div region="south" style="height: 25px;padding: 5px" align="center">
+        <div region="south" style="height: 25px;padding: 5px" align="center">
+            Copyright © 2019-2020 wyedward的SSM博客系统 版权所有
+        </div>
     </div>
 </body>
 </html>
