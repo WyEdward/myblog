@@ -24,9 +24,14 @@
     </bean>
     
     <!--3、配置静态资源过滤-->
-    <mvc:resources location="WEB-INF/resources/css/" mapping="/css/**" />
-    <mvc:resources location="WEB-INF/resources/images/" mapping="/images/**" />
-    <mvc:resources location="WEB-INF/resources/js/" mapping="/js/**" />
+
+    <!-- 静态资源解析，包括js,css,img... -->
+    <!--location:指location指定的目录不要拦截，直接请求，这里指在根目录下的resources文件下的所有文件
+    mapping:值在resources文件下的所有文件(**代表所有文件)-->
+    <mvc:resources location="/resources/" mapping="/resources/**"/>
+   <!-- <mvc:resources location="/resources/css/" mapping="/resources/css/**" />
+    <mvc:resources location="/resources/images/" mapping="/resources/images/**" />
+    <mvc:resources location="/resources/js/" mapping="/resources/js/**" />-->
 
     <!--4、开启springmvc的注解-->
     <mvc:annotation-driven />
