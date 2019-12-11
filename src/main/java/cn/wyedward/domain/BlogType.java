@@ -17,6 +17,12 @@ public class BlogType implements Serializable {
         this.orderNum = orderNum;
     }
 
+    public BlogType(Integer id, String typeName, Integer orderNum) {
+        this.id = id;
+        this.typeName = typeName;
+        this.orderNum = orderNum;
+    }
+
     public Integer getId() {
         return id;
     }

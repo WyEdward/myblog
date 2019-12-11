@@ -42,5 +42,40 @@
         </trim>
     </insert>
 
+    <!--删除博客类别-->
+    <delete id="deleteBlogType" parameterType="int" >
+        DELETE FROM db_blog.t_blogtype where id = #{id}
+    </delete>
 
+    <!--更新博客类别-->
+    <!--set 元素会动态前置 SET 关键字，同时也会删掉无关的逗号，-->
+    <update id="updateBlogType" parameterType="BlogType">
+        update db_blog.t_blogtype
+        <set>
+            <if test="typeName!=null and typeName!='' ">
+                type_name = #{typeName},
+            </if>
+            <if test="orderNum!=null and orderNum!='' ">
+                order_num = #{orderNum},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--根据id查博客类别-->
+    <select id="getById" parameterType="int" resultMap="BlogTypeResult">
+        select id,type_name,order_num from db_blog.t_blogtype
+        where id = #{id}
+    </select>
+
+    <!--分页查询博客类别信息-->
+    <select id="ListByPage" resultMap="BlogTypeResult">
+       SELECT id,type_name,order_num from db_blog.t_blogtype
+       limit #{start} ,#{end}
+    </select>
+
+    <!--查询总记录数-->
+    <select id="getTotal" resultType="long">
+        select count(id) from db_blog.t_blogtype
+    </select>
 </mapper>
