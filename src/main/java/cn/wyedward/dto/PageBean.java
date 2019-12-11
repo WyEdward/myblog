@@ -16,7 +16,7 @@ public class PageBean<T> {
         this.currPage = currPage;
         this.pageSize = pageSize;
         this.start = (currPage-1) *pageSize;
-        this.end = (currPage) *pageSize;
+        this.end = pageSize; //(currPage) * pageSize
     }
 
     public int getCurrPage() {
