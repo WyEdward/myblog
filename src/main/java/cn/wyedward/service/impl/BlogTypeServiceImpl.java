@@ -29,4 +29,19 @@ public class BlogTypeServiceImpl implements BlogTypeService {
         return pageBean;
     }
 
+    @Override
+    public Integer addBlogType(BlogType blogType) {
+        return blogtypeDao.addBlogType(blogType);
+    }
+
+    @Override
+    public Integer deleteBlogType(Integer id) {
+        return blogtypeDao.deleteBlogType(id);
+    }
+
+    @Override
+    public Integer updateBlogType(BlogType blogType) {
+        return blogtypeDao.updateBlogType(blogType);
+    }
+
 }
